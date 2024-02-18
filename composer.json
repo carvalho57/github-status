@@ -1,0 +1,19 @@
+{
+    "name": "carvalho/github-status",
+    "description": "Baseado no app ideas Tier 1 Github Status App",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "GithubStatus\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gabrielcarvalho57@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/dom-crawler": "^7.0",
+        "symfony/css-selector": "^7.0"
+    }
+}
