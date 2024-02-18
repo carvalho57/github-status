@@ -10,7 +10,7 @@ class GithubStatusExtract
     {
     }
 
-    public function getComponents(string $html): array
+    public function getComponentsStatus(string $html): array
     {
         $this->crawler->addHtmlContent($html);
 
