@@ -1,6 +1,6 @@
 <?php
 
-namespace GithubStatus;
+namespace GithubStatus\Helper;
 
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -24,7 +24,7 @@ class GithubStatusExtract
                     $description = $node->filter('span.tooltip-base.tool')->attr('title') ;
                 }
 
-                $status = $node->filter('div[data-component-status]')->attr('data-component-status');
+                $status = $node->children()->attr('data-component-status');
 
                 return [
                     'name' => $name,

@@ -1,6 +1,8 @@
 <?php
 
-namespace GithubStatus;
+namespace GithubStatus\Helper;
+
+use GithubStatus\Response;
 
 class CurlHelper
 {
