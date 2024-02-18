@@ -69,6 +69,14 @@
             background-color: #6b6b6b;
             color: white;
         }
+
+        .status-inoperational {
+            box-shadow: 2px 3px 1px 0px rgba(255, 0, 0, 0.75);
+        }
+
+        .status-inoperational:hover {
+            box-shadow: 2px 3px 1px 0px rgba(255, 0, 0);
+        }
     </style>
 </head>
 
@@ -121,6 +129,10 @@
 
                 const div = document.createElement('div');
                 div.classList.add('component');
+
+                if (component.status != 'operational') {
+                    div.classList.add('status-inoperational');
+                }
 
                 const name = document.createElement('p');
                 const nameContent = document.createTextNode(`Name: ${component.name}`);
