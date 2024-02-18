@@ -19,7 +19,7 @@ to develop it using your language of choice!
 
 ## User Stories
 
--   [ ] User can see the current status for GitHub Git operations, API Requests,
+-   [X] User can see the current status for GitHub Git operations, API Requests,
 Operational Issues, PRs, Dashboard, & Projects, Operational Notifications,
 Operational Gists, and Operational GitHub Pages as a list in the main app
 window.
