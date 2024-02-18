@@ -11,7 +11,7 @@ Operational Gists, and Operational GitHub Pages as a list in the main app
 window.
 -   [x] User can retrieve the most recent status from the GitHub Status web
 site by clicking a 'Get Status' button.
--   [ ] User can see any of the GitHub components that are not in 'Operational'
+-   [x] User can see any of the GitHub components that are not in 'Operational'
 status highlighted by a different color, background animation, or any other
 technique to make it stand out. Use your imagination!
 
