@@ -18,7 +18,7 @@ class GithubStatusExtract
             ->filter('div.components-container > div.component-container')
             ->each(function (Crawler $node, $i) {
                 $name = $node->filter('span.name')->text();
-                $description = '';
+                $description = 'N/A';
 
                 if ($node->filter('span.tooltip-base.tool')->count() > 0) {
                     $description = $node->filter('span.tooltip-base.tool')->attr('title') ;
