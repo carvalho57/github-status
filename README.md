@@ -9,7 +9,7 @@ Baseado no app-ideas beginners [GitHub-Status-App](https://github.com/florinpop1
 Operational Issues, PRs, Dashboard, & Projects, Operational Notifications,
 Operational Gists, and Operational GitHub Pages as a list in the main app
 window.
--   [ ] User can retrieve the most recent status from the GitHub Status web
+-   [x] User can retrieve the most recent status from the GitHub Status web
 site by clicking a 'Get Status' button.
 -   [ ] User can see any of the GitHub components that are not in 'Operational'
 status highlighted by a different color, background animation, or any other

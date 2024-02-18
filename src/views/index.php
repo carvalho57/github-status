@@ -7,12 +7,23 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Github Status</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Sixtyfour&display=swap');
+
+        * {
+            margin: 0;
+        }
 
         body {
             width: 80%;
             margin: 0 auto;
             max-width: 900px;
+            font-family: "Sixtyfour", sans-serif;
+
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 3rem;
         }
 
         h1,
@@ -37,25 +48,71 @@
         .component p {
             margin: 5px 0;
         }
+
+        #refresh-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .refresh-button {
+            cursor: pointer;
+            padding: 16px 32px;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            border: 2px solid #6b6b6b;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .refresh-button:hover {
+            background-color: #6b6b6b;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Github Status</h1>
-    <h2> A simple web scrapper</h2>
-    <hr>
+    <header>
+        <h1>Github Status</h1>
+        <h2> A simple web scrapper</h2>
+        <div id="refresh-button-container">
+            <button class="refresh-button" type="button">Get Status</button>
+
+        </div>
+    </header>
+
     <div id="components-render">
     </div>
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
+            updateComponentsStatus();
+        });
+
+        const refreshButton = document.querySelector('.refresh-button');
+        refreshButton.addEventListener('click', function (e) {
+            e.stopPropagation();
+            updateComponentsStatus();
+        })
+
+        function updateComponentsStatus() {
+
+            const componentsRender = document.querySelector('#components-render');
+
+            //Remove all child elements
+            while (componentsRender.firstChild) {
+                componentsRender.removeChild(componentsRender.lastChild);
+            }
+
             fetch('/status')
                 .then(response => response.json())
                 .then(components => {
                     console.log(components);
                     render(components)
                 })
-        });
+        }
+
 
         function render(components) {
             const componentsRender = document.querySelector('#components-render');
@@ -77,9 +134,9 @@
                 const statusContent = document.createTextNode(`Status: ${component.status}`);
                 status.appendChild(statusContent);
 
-                div.appendChild(name)
-                    .appendChild(description)
-                    .appendChild(status);
+                div.appendChild(name);
+                div.appendChild(description);
+                div.appendChild(status);;
 
                 componentsRender.appendChild(div);
             });
